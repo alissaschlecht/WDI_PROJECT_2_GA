@@ -1,3 +1,4 @@
+
 # WDI_PROJECT_2
 
 
@@ -33,14 +34,6 @@ Preparation:
 
   -WireFraming:
   Link to wireframes  
-
-
-
-
-
-
-
-
 
 
 
