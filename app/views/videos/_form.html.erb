@@ -1,0 +1,49 @@
+<%= form_for(@video) do |f| %>
+  <% if @video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+      <ul>
+      <% @video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group col-sm-12">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :class => 'form-control' %>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, :class => 'form-control' %>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :genre %><br>
+    <%= f.text_field :genre, :class => 'form-control' %>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :artist %><br>
+    <%= f.text_field :artist, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <%= f.label :start_time %><br>
+    <%= f.number_field :start_time, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <%= f.label :end_time %><br>
+    <%= f.number_field :end_time, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <%= f.hidden_field :playlist_id, :value => @playlist_id %>
+  </div>
+  <div class="actions btn btn-default">
+    <%= f.submit %>
+  </div><br/><br/>
+  
+<% end %>

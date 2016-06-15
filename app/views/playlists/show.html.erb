@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header"><%= @playlist.title %></h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div>
+  <div class="video_box col-md-8 col-xs-12">
+      <div id="youtubePlayer" class="col-xs-12"></div><br/>
+      <div class="player_controllers">
+        <i href="#" id="restart" class="fa fa-refresh fa-2x" aria-hidden="true" title="Restart"></i>
+      </div>
+  </div>
+</div>
+
+  <div class="col-md-4 info_box">
+    <h3>Genre</h3>
+      <p class="video_title"><%= @playlist.genre %></p><br/>
+    <h3>Videos</h3>
+    <ul>
+      <% @videos.each do |video| %>
+        <div class="video_title">
+          <h4><%= video.title %></h4><br/>
+          <h5><%= video.artist %></h5> 
+        </div>
+      <% end %>
+    </ul>
+  </div>
+  <br/>
+
+  <div class="col-lg-4 links_box">
+      <a href=<%= playlists_path %> class="btn user_link">
+        <i class="fa fa-list" aria-hidden="true"> ALL</i>
+      </a>
+      <a href=<%= new_playlist_path %> class="btn user_link">
+        <i class="fa fa-plus-square" aria-hidden="true"> NEW</i> 
+      </a>
+      <a href=<%= users_show_path %> class="btn user_link">
+        <i class="fa fa-user aria-hidden="true"> HOME</i> 
+      </a>
+  </div>
+
+  
+  <div class="col-lg-4 bottom_box">
+    <% if @playlist.user_id.to_i == current_user.id.to_i %>
+        <%= link_to 'Edit', edit_playlist_path(@playlist), :class => "video_title" %><br/>
+        <%= link_to 'Delete', @playlist, method: :delete, data: { confirm: 'Are you sure?' }, :class => "video_title" %>
+      <% else %>
+        <%= link_to 'Unsubscribe', remove_playlist_path(@playlist.id), :class => "video_title" %>
+    <% end %>
+  </div>
+
+  <input id="youtubeVideosList" type="hidden" value='[
+  <% @playlist.videos.each do |video| %>
+    {"videoId": "<%= video.url %>", "startSeconds": <%= video.start_time %>, "endSeconds": <%= video.end_time %>}
+    <% if video != @playlist.videos.last then %>, <% end %>
+  <% end %>
+  ]' />
+
+
+
+

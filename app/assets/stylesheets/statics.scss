@@ -1,0 +1,85 @@
+// Place all the styles related to the Statics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#hideshow {
+  display: none;
+}
+
+a.side_links {
+  font-size:30px;
+}
+
+.home_links {  
+  padding: 60px;
+  position: absolute;
+  z-index: 4;
+  right: 2px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: translate(50%, -50%) rotate(-90deg) translateY(-50%);
+  transform: translate(50%, -50%) rotate(-90deg) translateY(-50%);
+}
+
+.side_links {
+  color:white;
+  text-decoration: none;
+  display: inline;
+  padding: 30px;
+}
+
+.side_links:hover {
+  color:white;
+  text-decoration: none;
+  opacity: .5;
+}
+// .dance_button_container:hover 
+
+.home_background {
+  background-image: url("https://wallpaperscraft.com/image/gray_background_dots_72424_3840x2160.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-height: 100%;
+}
+
+// https://s-media-cache-ak0.pinimg.com/736x/2a/32/3d/2a323d9c5a48c8b67c0786afe9b66abe.jpg
+
+
+.hide_button_container {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  margin-top: 10%;
+}
+
+#dance_button {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color:none;
+  opacity: .5;
+  border:#8b8d90 150px solid;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding: 40px;
+  cursor: pointer;
+}
+
+#dance_button span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 40%;
+  color: white;
+}
+
+#dance_button:hover {
+  background-color: #656668;
+  opacity: .8;
+}
+
+
+

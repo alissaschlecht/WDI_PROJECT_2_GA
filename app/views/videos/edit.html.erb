@@ -1,0 +1,12 @@
+<div class="all_forms">
+  <div class="form-inner">
+
+    <h1>Edit <strong><%= @video.title %></strong></h1>
+
+    <%= render 'form' %>
+
+    <%= link_to 'Show', @video, :class => "btn btn-default" %>
+    <%= link_to 'Back to Playlist', playlist_path, :class => "btn btn-default" %>
+
+  </div>
+</div>

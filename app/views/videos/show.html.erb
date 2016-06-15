@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<a href="/users/<%= current_user.id %>">My Playlists</a>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @video.title %>
+</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/v/VUxh-jw-C-w?version=3&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @video.genre %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @video.artist %>
+</p>
+
+<p>
+  <strong>Playlist:</strong>
+  <%= @video.playlist.title %>
+</p>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

@@ -1,0 +1,13 @@
+<div class="all_forms">
+  <div class="form-inner">
+
+    <h1>New Video</h1>
+
+    <%= render 'form' %>
+
+    <div class="btn btn-default"><a href="/users/<%= current_user.id %>">All Playlists</a></div>
+    <div class="btn btn-default"><a href="/playlists/<%= @playlist_id %>/edit">Playlist</a></div>
+
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="hide_button_container">
+  <div id="dance_button"><span>DANCEOKE</span></div>
+</div>
+
+<div class="home_links" id="hideshow" value='hide/show'>
+    <% if current_user %>
+      <a class="side_links" href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'side_links' %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path, :class => 'side_links' %>
+      <%= link_to "Register", new_user_registration_path, :class => 'side_links' %>
+      <%= link_to "Videos", playlists_show_all_path, :class => 'side_links' %>
+    <% end %>
+</div>

@@ -1,0 +1,24 @@
+<div class="all_forms">
+  <div class="form-inner">
+
+    <h1>Edit <%= @playlist.title %></h1>
+
+    <ul>
+      <% @videos.each do |video| %>
+
+        <li><h4><a class="btn btn-default" href="/playlists/<%= @playlist.id %>/video/<%= video.id %>/edit"> Edit</a> <%= video.title %></h4></li><br/>
+
+      <% end %>
+    </ul>
+
+    <div class="btn btn-default"><a href= '/playlist/<%= @playlist.id %>/videos/new'>New Video</a></div><br/><br/>
+
+    <%= render 'form' %>
+
+
+    <%= link_to 'Cancel', playlist_path, :class => "btn btn-default" %>
+    
+
+
+  </div>
+</div>

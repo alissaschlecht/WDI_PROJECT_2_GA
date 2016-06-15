@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Playlists</h1>
+          
+
+    <div class="col-md-12 user_header">
+    <div class="col-md-6 user_header">
+          <a href="/playlists" class="btn user_link show_all">
+            <i class="fa fa-list" aria-hidden="true"> ALL</i>
+          </a>
+          <a href=<%= new_playlist_path %> class="btn user_link show_new">
+            <i class="fa fa-plus-square" aria-hidden="true"> NEW</i> 
+          </a>
+          <a href="/users/<%= current_user.id %>" class="btn user_link show_all">
+            <i class="fa fa-list" aria-hidden="true"> My Lists</i>
+          </a>
+    </div>
+    </div>
+
+    <br/>
+
+    <div class="col-lg-12 random">
+    <div class="random btn btn-default"><a class="randomize" href="/playlists/<%= @randlist %>">Random</a></div>
+    </div>
+    <br/>
+
+    <% @playlists.each do |playlist| %>
+      <div class="col-lg-4 col-md-6 col-xs-12 portfolio-item">
+          <a class="thumbnail" href="/playlists/<%= playlist.id %>">
+              <br/>
+              <img class="img-responsive" src="http://img.youtube.com/vi/<%= playlist.videos[0].url%>/0.jpg" alt="<%= playlist.title %>" >
+          </a>
+          <div class="subscribe playlist_title"><strong><h2><%= link_to playlist.title, playlist %></h2></strong></div>
+          <% if playlist.user_id.to_i != current_user.id.to_i %>
+            <% unless current_user.playlists.exists?(playlist) %>
+              <div class="subscribe"><%= link_to 'Subscribe', subscribe_playlist_path(playlist.id) %></div><br/><br/>
+            <% else %>
+              <div class="subscribe"><%= link_to 'Unsubscribe', unsubscribe_playlist_path(playlist.id) %></div><br/><br/>
+            <% end %>
+          <% end %>
+              </div>
+      <% end %>            
+  </div>
+</div>
+
+
+

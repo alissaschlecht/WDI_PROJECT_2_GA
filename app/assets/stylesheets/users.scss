@@ -1,0 +1,30 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.list_playlists{
+  background-color: black;
+  border: none;
+}
+
+#show_new_links, #show_all_links {
+  display: none;
+}
+
+.show_all:hover div#show_all_links, .show_new:hover div#show_new_links {
+    display: block;
+}
+
+div.btn.user_link {
+  display: block;
+  text-align: center;
+}
+
+.links_box, .info_box, .bottom_box, .video_box {
+  border: white 1px solid;
+  padding: 5px;
+  background-color: #d3d1d1;
+  color: #656668;
+  float: left;
+}

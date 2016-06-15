@@ -1,0 +1,261 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "statics.scss";
+ @import "users.scss";
+ @import "reset.scss";
+ @import "font-awesome";
+
+//main
+
+body {
+  font-family: 'Antic Slab', serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+input{
+  background-color: inherit;
+  border:none;
+}
+
+h1{
+  font-size: 50px;
+}
+
+h3{
+  font-size: 30px;
+}
+
+h2 a{
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p, a {
+  font-size: 15px;
+}
+
+a.btn:hover {
+  color:#656668 ;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #8A0000;
+}
+
+a.btn.btn-default {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+.video_title, a.video_title{
+  padding: 4px;
+}
+
+a.video_title {
+  padding: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+  color: #f8f8f8;
+}
+
+.player_controllers i {
+  padding: 10px;
+  padding-left: 20px;
+  color: #black;
+}
+
+.player_controllers i:hover{
+  color:#8A0000;
+  cursor:pointer;
+}
+
+.player_controllers {
+  background-color: #black;
+  width: 100%;
+}
+
+.not_form_background{
+  background-color: white;
+}
+
+.form_background {
+  background-image: url('https://wallpaperscraft.com/image/gray_background_dots_72424_3840x2160.jpg');
+}
+
+.brand_image{
+  width: 25px;
+  height: 25px;
+}
+
+.actions {
+  background-color: #f8f8f8;
+}
+
+.subscribe{
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.subscribe a:hover{
+ text-decoration: none;
+}
+
+.user_playlist_nav{
+  text-align: center;
+  padding: 10px;
+}
+
+.navbar, .navbar-brand{
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  position: fixed;
+  width: 100%;
+  color: white;
+}
+
+.video_grid{
+  background-image: url("http://www.lagottoromagnoloassociation.co.uk/uploads/2/1/6/0/21607702/7867817_orig.jpg");
+  height: 250px;
+  background-size: cover;
+}
+
+.all_forms {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 50%;
+  border: #f8f8f8 2px solid;
+  border-radius: 5px;
+  padding: 20px;
+  min-width: 320px;
+  background-color: #999999;
+  opacity: .8;
+}
+.form-inner {
+  padding: 10px;
+  min-width: 300px;
+}
+
+.list_videos li {
+ text-decoration: none;
+ display: inline;
+ list-style: none;
+}
+
+.profile_pic img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.video_icon {
+ height:30px;
+ width: 50px;
+ display: inline;
+}
+
+.round-image-50 img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hover_change:hover {
+  color:black;
+}
+
+video.video-stream.html5-main-video {
+  width: 100%;
+}
+
+#player{
+  width:100%;
+}
+
+.youtubePlayer {
+  width: 100%;
+}
+
+.user_header {
+  text-align: left;
+  background-color: #e8ecef;
+  padding: 5px;
+}
+
+.user_header_2{
+  text-align: right;
+} 
+
+i#restart i {
+  color: black;
+}
+
+.random {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  // border-radius: 50%;
+  border-width: 30px;
+  background-color: transparent;
+  color:#8A0000;
+  border-color: black;
+}
+
+.thumbnail{
+  margin-top: 20px;
+}
+
+// responsive
+
+@media only screen and (max-width: 1200px){
+  
+//user page
+  .well {
+    position: relative;
+    margin: 0 auto; 
+    text-align: center;
+  }
+
+// form pages
+  .all_forms{
+    padding:0;
+  }
+
+// first page
+  .home_background {
+    background-image: url("https://wallpaperscraft.com/image/gray_background_dots_72424_3840x2160.jpg");
+    -webkit-transform: rotate(90deg);
+    -moz-transform:    rotate(90deg);
+    -ms-transform:     rotate(90deg);
+    -o-transform:      rotate(90deg);
+    transform:         rotate(90deg);
+
+    background-repeat: repeat;
+  }
+
+  // video page
+  
+  .info_box {
+    display: none;
+  }
+
+  .links_box, .bottom_box{
+    width:100%;
+  }
+
+  #player{
+    width:100%;
+  }
+
+}

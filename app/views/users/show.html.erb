@@ -1,0 +1,53 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-header"><%= @user.username %></h1>  
+      </div>
+
+      <div class="col-md-12 user_header">
+      <div class="col-md-6 user_header">
+        <h2>Playlists</h2> 
+      </div>
+      <div class="col-md-6 user_header_2">
+            <a href="/playlists" class="btn user_link show_all">
+              <i class="fa fa-list" aria-hidden="true"> ALL</i>
+            </a>
+            <a href=<%= new_playlist_path %> class="btn user_link show_new">
+              <i class="fa fa-plus-square" aria-hidden="true"> NEW</i> 
+            </a>
+      </div>
+      </div>
+          
+      </div>
+
+      <br/>
+
+    <div class="col-md-12">
+       
+        <% @playlists.each do |playlist| %>
+        <h2><a href="/playlists/<%= playlist.id %>"><%= playlist.title %></a></h2>
+          <h3><p class="lead"><%= playlist.genre %></p></h3>
+          <a class="thumbnail list_playlists" href="/playlists/<%= playlist.id %>">
+            <img class="img-responsive" src="http://img.youtube.com/vi/<%= playlist.videos[0].url%>/hqdefault.jpg" alt="<%= playlist.title %>" >
+          </a>
+        <hr>
+        <% end %>
+
+        <% @owned_playlists.each do |playlist| %>
+        <h2><a href="/playlists/<%= playlist.id %>"><%= playlist.title %></a></h2>
+          <h3><p class="lead"><%= playlist.genre %> </p></h3>
+          <a class="thumbnail list_playlists" href="/playlists/<%= playlist.id %>">
+            <img class="img-responsive" src="http://img.youtube.com/vi/<%= playlist.videos[0].url%>/hqdefault.jpg" alt="<%= playlist.title %>" >
+          </a>
+        <hr>
+        <% end %>
+    </div>
+              
+    </div>
+
+    <hr>
+
+  </div>
+
+
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Playlists</h1>
+    </div>
+
+
+    <% @playlists.each do |playlist| %>
+      <div class="col-lg-4 col-md-6 col-xs-12 portfolio-item">
+          <a class="thumbnail" href="/playlists/<%= playlist.id %>">
+              <img class="img-responsive" src="http://img.youtube.com/vi/<%= playlist.videos[0].url%>/0.jpg" alt="<%= playlist.title %>">
+          </a>
+          <div class="subscribe playlist_title"><strong><%= link_to playlist.title, playlist %></strong></div><br/>
+      </div>
+      <% end %>            
+  </div>
+</div>

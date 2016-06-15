@@ -1,0 +1,17 @@
+{
+  "name": "WDI_PROJECT_2",
+  "homepage": "https://github.com/schleca/WDI_PROJECT_2",
+  "authors": [
+    "Alissa Schlecht <schlecht220@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
